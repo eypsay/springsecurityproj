@@ -18,6 +18,12 @@ public class StudentController {
             new Student(3, "zehra")
     );
 
+    @GetMapping("/students")
+    public List<Student> getAllStudents() {
+        System.out.println("All Students");
+        return STUDENTS;
+    }
+
     @GetMapping("/students/{studentid}")
     public Student getStudent(@PathVariable("studentid") Integer studentID) {
         return STUDENTS.stream()
